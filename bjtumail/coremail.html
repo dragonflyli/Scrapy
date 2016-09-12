@@ -1,0 +1,226 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>北京交通大学邮件系统</title>
+<base href="https://mail.bjtu.edu.cn/coremail/cmcu_var/index_cmxt30N1.jsp" />
+<link href="index_cmxt30N1/login.css" rel="stylesheet" type="text/css" charset="iso-8859-1" />
+
+
+
+
+<script type="text/javascript" src="../common/js/jquery.js"></script>
+<script type="text/javascript" src="index_cmxt30N1/login.js" charset="iso-8859-1"></script>
+<script type="text/javascript">
+    var markme_msg = "Please use Ctrl-D to bookmark this page.";
+</script>
+
+
+</head>
+
+<body>
+    <div class="Head" id="head">
+        <div class="logo">
+            <a href="http://www.njtu.edu.cn" target="_blank">
+              <img alt="北京交通大学" style="border:0 none;" src="index_cmxt30N1/logo.gif" />
+            </a>
+        </div>
+        <div class="Links" id="links">
+            <span id="学校首页"><a href="http://www.bjtu.edu.cn">学校首页</a> | </span>
+            <span id="管理信息系统"><a href="http://mis.bjtu.edu.cn">管理信息系统</a> | </span>
+            
+            <span id="homepage"><a class="MTLinks">Set as homepage</a> | </span>
+            
+            <span id="bookmark"><a href="javascript:bookmarkMe()">Add to Favorite</a> | </span>
+            
+            <span id="localeSwitch"><a href="javascript:setCookie('locale','zh_CN'); window.location.reload();">简体中文</a> |&nbsp;</span>
+            
+            <span id="helpIndex"><a target="_blank" href="/coremail/help/index.jsp">Help</a></span>
+        </div>
+    </div>
+
+    <div class="mainContainer" id="mainContainer" onclick="submitLinkForm();">
+        <img src="index_cmxt30N1/bg1.jpg" id="mainBgImg">
+        <div class="mainBgDesc" id="mainBgDesc">
+            <a href="http://njtu.edu.cn" target="_blank">春意送暖祈福迎祥——我校举办新春师生团圆宴</a>
+        </div>
+        <form id="linkForm" action="#" style="display: none;" target="_blank"></form>
+    </div>
+
+    <div class="footer" id="footer">
+        <div class= "copyright">
+北京交通大学. &copy; Copyright 2000 - 2014 BJTUICP备：13012104
+        </div>
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+    
+    
+        <div class="select_options localePanel">
+            <ul>
+                
+                    
+                    
+                    <a href="javascript:void(0);" onclick="changeLocale('zh_CN', '简体中文'); return false;">
+                        <li>
+                            <span>简体中文</span>
+                        </li>
+                    </a>
+                
+                    
+                    
+                    <a href="javascript:void(0);" onclick="changeLocale('zh_TW', '繁體中文'); return false;">
+                        <li>
+                            <span>繁體中文</span>
+                        </li>
+                    </a>
+                
+                    
+                    
+                        
+                    
+                    <a href="javascript:void(0);" onclick="changeLocale('en_US', 'English'); return false;">
+                        <li>
+                            <span>English</span>
+                        </li>
+                    </a>
+                
+            </ul>
+        </div>
+    
+
+
+    
+    
+        
+
+
+
+<div class="select_options domainPanel">
+    <ul>
+        
+            <a href="javascript:void(0);" onclick="changeDomain('bjtu.edu.cn');">
+                <li><span>bjtu.edu.cn</span></li>
+            </a>
+        
+            <a href="javascript:void(0);" onclick="changeDomain('jg.bjtu.edu.cn');">
+                <li><span>jg.bjtu.edu.cn</span></li>
+            </a>
+        
+    </ul>
+</div>
+
+
+    
+
+    <div class="Main" id="Main">
+      
+      <form id="loginForm" method="post" action="/coremail/index.jsp?cus=1" onsubmit="return loginSubmit(this, event);" >
+          <div class="Header">
+              <div class="title">Sign in</div>
+              <div class="language" id="language" onclick="fadeInElement(jQ('.localePanel').get(0), this, 5, -4);">
+                  <span>Language:</span>
+                  <span id="languageName">English</span>
+                  <b class="ico icoArr"></b>
+                  <input type="hidden" name="locale" id="locale" value="en_US"/>
+              </div>
+          </div>
+          
+          <div id="logArea">
+              <div class="inptr selected">
+                  <div class="ico icoUser"></div>
+                  <input type="text" id="uid" name="uid" class="inpUser" value="15120207">
+                  <label class="placeholder" id="uidPlaceholder">Username</label>
+                  <input type="hidden" name="nodetect" value="false"/>
+              </div>
+              
+                  
+                  <div class="inptr">
+                      <div class="ico icoDomain"></div>
+                      <div class="inpDomain"  id="inpDomain" onclick="fadeInElement(jQ('.domainPanel').get(0), this, 10);">
+                          <span style="float:left" id="domainVal">bjtu.edu.cn</span>
+                      </div>
+                      <div class="icoR icoArrow"  id="icoArrowDomain" style="cursor: pointer" onclick="fadeInElement(jQ('.domainPanel').get(0), jQ('#inpDomain'), 10);"></div>
+                  </div>
+                  <input type="hidden" name="domain" id="domain" value="bjtu.edu.cn">
+              
+              <div class="inptr">
+                  <div class="ico icoPassword"></div>
+                  <input type="password" id="password" name="password" class="inpPW" autocomplete="off"  value="180013">
+                  <label class="placeholder" id="passwordPlaceholder">Password</label>
+              </div>
+              
+              
+
+              
+                  
+                  
+              
+              
+              <div class="inplist" >
+                  
+                  <label for="saveUsername" id="saveUsernameLabel" style="float:left;">
+                      <input type="checkbox" id="saveUsername" class="checkboxfix" checked />
+                      Remember user
+                  </label>
+                  
+                  
+                      <label class="for" id="enableUseSSLLabel" style="float:right;">
+                          <input type="checkbox" name="useSSL" class="checkboxfix" value="true" checked />
+                          Use SSL
+                      </label>
+                  
+              </div>
+              <div class="inpB" >
+                  <div>
+                      <button name="action:login" type="submit" class="Button" id="login_button">
+                          Sign in
+                      </button>
+                  </div>
+		<div style="text-align: center;">		
+ 			<img src="index_cmxt30N1/cmapp.png" >
+			APP客户端下载
+		</div>
+              </div>
+
+              <div class="inplist" style="padding: 0px 17px 4px 17px;">
+                  
+                  
+
+                  
+                  
+                  
+              </div>
+              
+          </div>
+      </form>
+    </div>
+
+    
+    <div class="MainBgSwitchLeft" onclick="switchBackground(true);"></div>
+    <div class="MainBgSwitchRight" onclick="switchBackground(false);"></div>
+
+  <script type="text/javascript">
+      
+          
+          
+          
+                  
+                  
+          
+      
+      initXT3("uid", 2);
+
+  </script>
+
+
+</body>
+</html>

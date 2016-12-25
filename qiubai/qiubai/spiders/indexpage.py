@@ -27,5 +27,5 @@ class QiuBaiSpider(scrapy.Spider):
             comment_author = comment.xpath('./div[2]/a/text()').extract()[0]
             comment_content = comment.xpath('./div[2]/span/text()').extract()[0]
             comments.append({"comment_author": comment_author, "comment_content": comment_content})
-            item["comments"] = comments
-            yield item
+        item["comments"] = comments
+        yield item
